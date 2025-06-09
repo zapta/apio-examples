@@ -93,7 +93,7 @@ jobs:
       - name: Compress the package directory
         run: |
           pushd _package
-          tar zcf ../{PACKAGE_NAME} ./*
+          tar zcf ../${PACKAGE_NAME} ./*
           popd
           ls -al
 
