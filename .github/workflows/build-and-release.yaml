@@ -69,12 +69,12 @@ jobs:
           echo "{" >> ${out}
           echo "  \"name\": \"examples\"," >> ${out}
           echo "  \"description\": \"Apio examples package\"," >> ${out}
-          echo "  \"build-repo": \"${{github.repository}}\"," >> ${out}
+          echo "  \"build-repo\": \"${{github.repository}}\"," >> ${out}
           echo "  \"workflow\": \"${{github.workflow}}\"," >> ${out}
           echo "  \"workflow-run\": \"${{github.run_id}}\"," >> ${out}
           echo "  \"time\": \"$(date +'%Y-%m-%d %H:%M:%S %Z')\"," >> ${out}
           echo "  \"commit\": \"$RELEASE_COMMIT\"," >> ${out}
-          echo "  \"version\": \"$PACKAGE_TAG\""," >> ${out}
+          echo "  \"version\": \"$PACKAGE_TAG\"" >> ${out}
           echo "}" >> ${out}
 
           ls -al
@@ -86,7 +86,7 @@ jobs:
           mkdir "_package"
           cp -r ./this-repo/examples/* _package
           cp ./this-repo/LICENSE _package
-          cp package.info _package
+          cp package.json _package
           find _package
 
 
