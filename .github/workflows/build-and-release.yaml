@@ -74,7 +74,7 @@ jobs:
           echo "  \"workflow-run\": \"${{github.run_id}}\"," >> ${out}
           echo "  \"time\": \"$(date +'%Y-%m-%d %H:%M:%S %Z')\"," >> ${out}
           echo "  \"commit\": \"$RELEASE_COMMIT\"," >> ${out}
-          echo "  \"version\": \"$PACKAGE_TAG\"" >> ${out}
+          echo "  \"version\": \"$RELEASE_TAG\"" >> ${out}
           echo "}" >> ${out}
 
           ls -al
@@ -108,7 +108,7 @@ jobs:
 
           echo -e "\n<br>\n" >> $out
 
-          echo "package.json"
+          echo "package.json" >> $out
           echo '```' >> $out
           cat package.json >> $out
           echo '```' >> $out
