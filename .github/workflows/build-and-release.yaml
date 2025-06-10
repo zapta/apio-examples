@@ -108,7 +108,7 @@ jobs:
 
           echo -e "\n<br>\n" >> $out
 
-          package.json
+          echo "package.json"
           echo '```' >> $out
           cat package.json >> $out
           echo '```' >> $out
