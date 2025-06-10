@@ -42,15 +42,14 @@ jobs:
           echo "PACKAGE_TAG=$package_tag" >> $GITHUB_ENV
 
 
+      # Repo is opened at the current directory.
       - name: Checkout this repo
         uses: actions/checkout@v4
-        with:
-          path: this-repo
 
 
       - name: Determine last commit
         run: |
-          commit=$(git -C this-repo rev-parse HEAD)
+          commit=$(git rev-parse HEAD)
           echo $commit
           echo "RELEASE_COMMIT=$commit" >> $GITHUB_ENV
 
@@ -87,8 +86,8 @@ jobs:
       - name: Collect package files
         run: |
           mkdir "_package"
-          cp -r ./this-repo/examples/* _package
-          cp ./this-repo/LICENSE _package
+          cp -r ./examples/* _package
+          cp ./LICENSE _package
           cp package.json _package
           find _package
 
