@@ -62,23 +62,23 @@ jobs:
           echo "PACKAGE_NAME=$package_name" >> $GITHUB_ENV
 
 
-      - name: Create build-info file
+      - name: Create the package.json file
         run: |
-          out="BUILD-INFO"
+          out="package.json"
 
-          echo "[apio-build-info]" >> ${out}
-          echo "package = examples" >> ${out}
-          echo "time = $(date +'%Y-%m-%d %H:%M:%S %Z')" >> ${out}
-          echo "repo = ${{github.repository}}" >> ${out}
-          echo "workflow = ${{github.workflow}}" >> ${out}
-          echo "run-id = ${{github.run_id}}" >> ${out}
-          echo "run-number = ${{github.run_number}}" >> ${out}
-          echo "commit = $RELEASE_COMMIT" >>  ${out}
-          echo "package-tag:  $RELEASE_TAG" >> ${out}
-          echo "release-tag:  $RELEASE_TAG" >> ${out}
+          echo "{" >> ${out}
+          echo "  \"name\": \"examples\"," >> ${out}
+          echo "  \"description\": \"Apio examples package\"," >> ${out}
+          echo "  \"build-repo": \"${{github.repository}}\"," >> ${out}
+          echo "  \"workflow\": \"${{github.workflow}}\"," >> ${out}
+          echo "  \"workflow-run\": \"${{github.run_id}}\"," >> ${out}
+          echo "  \"time\": \"$(date +'%Y-%m-%d %H:%M:%S %Z')\"," >> ${out}
+          echo "  \"commit\": \"$RELEASE_COMMIT\"," >> ${out}
+          echo "  \"version\": \"$PACKAGE_TAG\""," >> ${out}
+          echo "}" >> ${out}
 
           ls -al
-          cat -n BUILD-INFO
+          cat -n package.json
 
 
       - name: Collect package files
@@ -86,7 +86,7 @@ jobs:
           mkdir "_package"
           cp -r ./this-repo/examples/* _package
           cp ./this-repo/LICENSE _package
-          cp BUILD-INFO _package
+          cp package.info _package
           find _package
 
 
@@ -108,9 +108,9 @@ jobs:
 
           echo -e "\n<br>\n" >> $out
 
-          echo "BUILD-INFO file:"
+          package.json
           echo '```' >> $out
-          cat BUILD-INFO >> $out
+          cat package.json >> $out
           echo '```' >> $out
 
           echo -e "\n<br>\n" >> $out
