@@ -64,7 +64,7 @@ jobs:
           {
             "name":  "examples",
             "description" : "Apio examples package",
-            "version":  "$RELEASE_TAG",
+            "release-tag":  "$RELEASE_TAG",
             "target-platform":  "all",
             "build-repo":  "${{github.repository}}",
             "build-workflow":  "${{ github.workflow }}",
