@@ -69,16 +69,16 @@ jobs:
             "build-repo":  "${{github.repository}}",
             "build-workflow":  "${{ github.workflow }}",
             "workflow-run-id":  "${{github.run_id}}",
-            "workflow-run-number": "${{github.run_number}}"
+            "workflow-run-number": "${{github.run_number}}",
             "build-time":  "$(date +'%Y-%m-%d %H:%M:%S %Z')",
             "commit":  "RELEASE_COMMIT",
-            "file-name":  "$PACKAGE_NAME",
+            "file-name":  "$PACKAGE_NAME"
           }
           EOF
 
           cat -n build-info.json
 
-          
+
       - name: Format build info
         run: |
           npm install -g json-align
