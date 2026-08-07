@@ -46,7 +46,8 @@ def run_cmd(
     Returns the command process result."""
 
     # print(f"Run: {cmd}", flush=True)
-    print(f"RUN: {' '.join(cmd[:2]):12}{' '.join(cmd[2:])}", flush=True)
+    # We align the 'apip' and major command in a fixed 12 char field.
+    print(f"RUN: {' '.join(cmd[:2]):12} {' '.join(cmd[2:])}", flush=True)
     result = subprocess.run(
         cmd, text=True, capture_output=True, encoding="utf-8", check=False
     )
