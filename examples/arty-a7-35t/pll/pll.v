@@ -7,7 +7,7 @@
 // CLKOUT0_DIVIDE:   8  ->  200 MHz (requested 200 MHz, exact)
 //
 // Generated with:
-//   apio raw -- xc7pll -i 100 -o 200 -m -f pll.v
+//   apio raw -- xc7pll -i 100 -o 200 -f pll.v
 //   apio format pll.v
 //
 // The `ifdef SYNTHESIS block and the fake implementation were added

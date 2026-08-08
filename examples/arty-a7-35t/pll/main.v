@@ -14,7 +14,7 @@ module main #(
   // PLL 100 MHz -> 200 MHz
   //
   // Generated with:
-  //   apio raw -- xc7pll -i 100 -o 200 -m -f pll.v
+  //   apio raw -- xc7pll -i 100 -o 200 -f pll.v
   //   apio format pll.v
   //
   // (See pll.v for the simulation support that was added manually.)
