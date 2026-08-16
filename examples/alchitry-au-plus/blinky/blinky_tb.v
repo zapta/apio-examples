@@ -16,7 +16,7 @@ module blinky_tb ();
 
   //-- Instantiate the unit to test
   main UUT (
-      .clk(clk),
+      .clk (clk),
       .leds(leds)
   );
 
@@ -31,11 +31,11 @@ module blinky_tb ();
 
   // System clock
   initial begin
-      clk = 1;
-      forever begin
-          #1;
-          clk = ~clk;
-      end
+    clk = 1;
+    forever begin
+      #1;
+      clk = ~clk;
+    end
   end
 
   initial begin

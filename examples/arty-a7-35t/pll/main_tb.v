@@ -3,7 +3,7 @@
 module main_tb;
 
   // Inputs
-  reg ext_clk = 0;
+  reg  ext_clk = 0;
 
   // Outputs
   wire LED;

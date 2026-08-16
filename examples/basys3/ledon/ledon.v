@@ -7,11 +7,11 @@ module ledon (
     output wire [15:0] leds
 );
 
-    //-- Encender led15!
-    assign leds[15] = 1'b1;
+  //-- Encender led15!
+  assign leds[15]   = 1'b1;
 
-    //-- El resto de leds, apagados (sin driver emiten warnings en yosys)
-    assign leds[14:0] = 15'b0;
+  //-- El resto de leds, apagados (sin driver emiten warnings en yosys)
+  assign leds[14:0] = 15'b0;
 
 endmodule
 
