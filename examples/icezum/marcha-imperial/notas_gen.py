@@ -44,9 +44,8 @@ def print_table(octave = 4):
 	print("//-- Octava: {}".format(octave))
 	for note in range(12):
 		#-- Print table in verilog sintax
-		print("`define {}_{} {:X} //-- {:.3f} Hz".format(
-		       nname[note + 1], 
-		       octave, 
+		print("`define {:7} 'h{:05X}  //-- {:.3f} Hz".format(
+		       f"{nname[note + 1]}_{octave}", 
 		       divisor(note+1, octave), 
 		       freq(note+1, octave)))
 	print("\n")
