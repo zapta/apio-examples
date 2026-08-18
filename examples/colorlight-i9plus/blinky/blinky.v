@@ -6,19 +6,19 @@ module main (
     output wire led
 );
 
-    //-- Contador de 25 bits
-    reg [24:0] counter;
-    always @(posedge clk) begin
-        counter <= counter + 1;
-    end
+  //-- Contador de 25 bits
+  reg [24:0] counter;
+  always @(posedge clk) begin
+    counter <= counter + 1;
+  end
 
-    //-- Mostrar en el LED el bit de mayor peso del contador
-    assign led = counter[24];
+  //-- Mostrar en el LED el bit de mayor peso del contador
+  assign led = counter[24];
 
-    //-- This is for simulation
-    //-- the counter should start in 0
-    initial begin
-        counter = 0;
-    end
+  //-- This is for simulation
+  //-- the counter should start in 0
+  initial begin
+    counter = 0;
+  end
 
 endmodule

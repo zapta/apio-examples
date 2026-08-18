@@ -9,7 +9,7 @@ module blinky_tb ();
   parameter DURATION = 10 * 3;
 
   //-- System clock
-  reg clk;
+  reg  clk;
 
   //-- Led port
   wire led;
@@ -31,11 +31,11 @@ module blinky_tb ();
 
   // System clock
   initial begin
-      clk = 1;
-      forever begin
-          #1;
-          clk = ~clk;
-      end
+    clk = 1;
+    forever begin
+      #1;
+      clk = ~clk;
+    end
   end
 
   initial begin

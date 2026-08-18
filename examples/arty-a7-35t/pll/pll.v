@@ -27,9 +27,9 @@ module pll (
   wire clk_fb, clk_out0_unbuf;
 
   PLLE2_BASE #(
-      .CLKIN1_PERIOD(10.000),
-      .DIVCLK_DIVIDE(1),
-      .CLKFBOUT_MULT(16),
+      .CLKIN1_PERIOD (10.000),
+      .DIVCLK_DIVIDE (1),
+      .CLKFBOUT_MULT (16),
       .CLKOUT0_DIVIDE(8)
   ) pll (
       .CLKIN1(clk_in),
@@ -56,7 +56,7 @@ module pll (
   // Fake implementation for simulation.
 
   assign clk_out0 = clk_in;
-  assign locked  = 1'b1;
+  assign locked   = 1'b1;
 
 `endif
 

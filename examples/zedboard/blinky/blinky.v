@@ -6,21 +6,21 @@ module main (
     output wire [3:0] leds
 );
 
-    //-- 27-bit counter
-    reg [26:0] counter;
-    always @(posedge clk) begin
-        counter <= counter + 1;
-    end
+  //-- 27-bit counter
+  reg [26:0] counter;
+  always @(posedge clk) begin
+    counter <= counter + 1;
+  end
 
-    //-- Show the counter MSB on LED0
-    assign leds[0] = counter[26];
+  //-- Show the counter MSB on LED0
+  assign leds[0]   = counter[26];
 
-    assign leds[3:1] = 0;
+  assign leds[3:1] = 0;
 
-    //-- This is for simulation
-    //-- the counter should start in 0
-    initial begin
-        counter = 0;
-    end
+  //-- This is for simulation
+  //-- the counter should start in 0
+  initial begin
+    counter = 0;
+  end
 
 endmodule
