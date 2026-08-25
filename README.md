@@ -1,3 +1,7 @@
+**IMPORTANT** [Aug 24th 2026] This examples repo is frozen and the examples are being moved to
+the [apio-definitions repo and](https://github.com/FPGAwars/apio-definitions) deprecating this repo. New PRs and commits are not accepted here anymore. This repo is used
+by apio releases up to 1.5.x (including) and can be deleted once their remote configs files are removed from the apio 
+repo.
 
 **IMPORTANT** [Dec 24th 2025] The main branch of this repository was changed from `master`
 to a new branch called `main` and the old `master` branch is now frozen in read-only state. Please submit all future pull requests on the new branch `main`. The frozen branch should keep serving
